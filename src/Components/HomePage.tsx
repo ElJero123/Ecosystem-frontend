@@ -89,13 +89,14 @@ export function HomePage () {
               <h1 className='text-2xl font-bold'>Bienvenido a EcoSystem</h1>
               <p>Un sistema que alerta posibles derrumbes y otros desastres naturales</p>
             </div>
-            <a className='flex cursor-pointer hover:bg-[var(--primary-color)]/90
-                    transition-colors duration-150 ease-in-out gap-2 items-center px-4 py-2
-                    bg-[var(--primary-color)] rounded-lg text-black'
+            <button
+              onClick={() => navigate('/dashboard')} type='button' className='flex cursor-pointer hover:bg-[var(--primary-color)]/90
+              transition-colors duration-150 ease-in-out gap-2 items-center px-4 py-2
+              bg-[var(--primary-color)] rounded-lg text-black'
             >
               Ver señales
               <ArrowUpRightIcon className='w-4 h-4' />
-            </a>
+            </button>
           </div>
           <div className='p-4 flex flex-wrap overflow-x-hidden items-center justify-around w-full gap-15'>
             <div>
