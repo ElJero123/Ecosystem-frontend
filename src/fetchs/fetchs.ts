@@ -28,7 +28,11 @@ export async function fetchPreds (sensorType: string) {
 }
 
 export async function fetchProms () {
-    const res = await fetch(`${backendUrl}/get-proms`)
+    const res = await fetch(`${backendUrl}/get-proms`, {
+        headers: {
+            'ngrok-skip-browser-warning': 'true'
+        }
+    })
     const data = await res.json()
 
     return data
