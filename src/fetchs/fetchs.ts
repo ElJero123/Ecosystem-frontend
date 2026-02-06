@@ -1,4 +1,4 @@
-export const backendUrl = 'https://e751-181-51-90-42.ngrok-free.app'
+export const backendUrl = 'https://alayah-fumaric-westin.ngrok-free.dev'
 
 export async function fetchDataSensors (sensorType: string) {
     const res = await fetch(`${backendUrl}/get-data`, {
@@ -10,7 +10,6 @@ export async function fetchDataSensors (sensorType: string) {
     }) 
 
     const data = await res.json()
-
     return data.res
 }
 
