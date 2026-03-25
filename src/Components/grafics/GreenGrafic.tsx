@@ -21,27 +21,38 @@ export default function GreenGrafic() {
   ])
 
   useEffect(() => {
+<<<<<<< HEAD
     // cambiar url cuando cambia la url del servidor
     const socket = io('http://localhost:3000')
 
     socket.emit('serial-data', () => {
       console.log('b')
+=======
+    const socket = io(backendUrl, {
+      transports: ['websocket']
+>>>>>>> 1722214bd77e23f5f035d9078bbdaf47172c88c9
     })
 
-    socket.on('serial-data', (data: { type: string, value: number }) => {
-      setSnsData((prevData) => {
-        return prevData.map((item) => {
-          if (item.name === data.type) return { ...item, value: data.value }
-          
-          return item
-        })
-      })
+    socket.emit('serial-data', () => {
+      console.log('a')
+    })
+
+    socket.on('serial-data', (data: { type: string; value: number }) => {
+      console.log('a')
+      setSnsData(prevData =>
+        prevData.map(item =>
+          item.name === data.type
+            ? { ...item, value: data.value }
+            : item
+        )
+      )
     })
 
     return () => {
       socket.off()
     }
   }, [])
+
 
   return (
     <section className='w-full h-full flex flex-col justify-center items-center gap-5'>
