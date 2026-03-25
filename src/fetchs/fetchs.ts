@@ -1,4 +1,4 @@
-export const backendUrl = 'http://localhost:3000'
+export const backendUrl = 'https://alayah-fumaric-westin.ngrok-free.dev'
 
 export async function fetchDataSensors (sensorType: string) {
     const res = await fetch(`${backendUrl}/get-data`, {
