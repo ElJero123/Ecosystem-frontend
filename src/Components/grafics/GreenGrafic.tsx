@@ -10,6 +10,7 @@ import {
 } from 'recharts'
 
 import { io } from 'socket.io-client'
+import { backendUrl } from '../../fetchs/fetchs';
 
 
 export default function GreenGrafic() {
@@ -21,16 +22,8 @@ export default function GreenGrafic() {
   ])
 
   useEffect(() => {
-<<<<<<< HEAD
-    // cambiar url cuando cambia la url del servidor
-    const socket = io('http://localhost:3000')
-
-    socket.emit('serial-data', () => {
-      console.log('b')
-=======
     const socket = io(backendUrl, {
       transports: ['websocket']
->>>>>>> 1722214bd77e23f5f035d9078bbdaf47172c88c9
     })
 
     socket.emit('serial-data', () => {
