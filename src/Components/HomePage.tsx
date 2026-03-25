@@ -39,7 +39,7 @@ const InfoCard = ({ title, description, reverse }: { title: string, description:
       <p className="text-white text-lg leading-relaxed">{description}</p>
     </div>
   )
-  const emptySpace = <div className="hidden outline-1 outline-white rounded-3xl lg:block w-full"></div>
+  const emptySpace = <img src="/img-prueba.jpg" alt="Empty Space" className="w-full h-full object-contain rounded-3xl" />
 
   return (
     <div ref={ref} className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch w-full">
